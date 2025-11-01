@@ -110,6 +110,7 @@ def get_model_local_path(pretrained_model_id_or_path, **kwargs):
         download_kwargs = kwargs.copy()
         download_kwargs.pop("attn_implementation", None)
         download_kwargs.pop("use_flash_attention_2", None)
+        download_kwargs.pop("max_memory", None)
         return snapshot_download(pretrained_model_id_or_path, **download_kwargs)
 
 
